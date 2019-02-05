@@ -6,7 +6,7 @@ from train import create_model, IMAGE_SIZE
 from keras.applications.mobilenetv2 import preprocess_input
 
 WEIGHTS_FILE = "model-0.00.h5"
-IMAGES = "~/home/einsteingirish/images/*png"
+IMAGES = "~/home/rignitc/Downloads/images/*png"
 
 def main():
     model = create_model()

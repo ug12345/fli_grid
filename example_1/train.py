@@ -1,4 +1,3 @@
-
 import csv
 import math
 
@@ -12,20 +11,20 @@ from tensorflow.keras.utils import Sequence
 from tensorflow.keras.backend import epsilon
 
 # 0.35, 0.5, 0.75, 1.0
-ALPHA = 0.5
+ALPHA = 0.75
 
 # 96, 128, 160, 192, 224
 IMAGE_SIZE = 96
 
-EPOCHS = 200
+EPOCHS = 100
 BATCH_SIZE = 32
 PATIENCE = 50
 
 MULTI_PROCESSING = True
 THREADS = 4
 
-TRAIN_CSV = "train.csv"
-VALIDATION_CSV = "train.csv"
+TRAIN_CSV = "tr1.csv"
+VALIDATION_CSV = "va1.csv"
 
 
 class DataGenerator(Sequence):
@@ -44,7 +43,7 @@ class DataGenerator(Sequence):
                 image_height = 480
                 image_width = 600
                 path1, x0, y0, x1, y1 = row
-                path = '/home/einsteingirish/images/'+str(path1)
+                path = '/home/rignitc/Downloads/images/'+str(path1)
                 self.coords[index, 0] = x0 * IMAGE_SIZE / image_width
                 self.coords[index, 1] = y0 * IMAGE_SIZE / image_height
                 self.coords[index, 2] = (x1 - x0) * IMAGE_SIZE / image_width
